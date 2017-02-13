@@ -1,0 +1,8 @@
+<!DOCTYPE HTML>
+<html>
+
+<canvas height="800" width="800" id="draw"></canvas>
+
+<button type="button">RESET</button>
+
+</html>

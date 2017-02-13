@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas height="500" width="500" id="draw" style="border:1px solid;" onclick="fxn()"></canvas>
+<br>
+<button type="button">RESET</button>
+
+<script>
+
+function fxn() {
+var c = document.getElementById("draw");
+var ctx = c.getContext("2d");
+ctx.fillStyle = "#ff0000";
+console.log(c)
+}
+
+</script>
+
+</body>
+</html>
