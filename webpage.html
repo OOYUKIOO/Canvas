@@ -2,56 +2,19 @@
 <html>
 <body>
 
-<canvas height="500" width="500" id="draw" style="border:1px solid;" onclick="connectDots(event)"></canvas>
+<!--
+<canvas height="500" width="500" id="draw" style="border:1px solid;"></canvas>
+-->
+
+<svg width="500" height="500" id="draw">
+</svg>
+
 <br>
-<button type="button" onclick="clearDraw(event)">RESET</button>
+<button type="button" id="c">Circle</button>
+<button type="button" id="s">Stop</button>
+<button type="button" id="dvd">DVD</button>
 
-<script>
-
-var startPoint = true;
-
-function mousePos(canvas, evt) {
-var rect = canvas.getBoundingClientRect();
-return {
-x: evt.clientX - rect.left,
-y: evt.clientY - rect.top
-};
-}
-  
-function drawRect(event) {
-var c = document.getElementById("draw");
-var ctx = c.getContext("2d");
-var coord = mousePos(c,event);
-ctx.rect(coord.x,coord.y,100,100);
-ctx.stroke();
-}
-
-function clearDraw(event) {
-var c = document.getElementById("draw");
-var ctx = c.getContext("2d");
-ctx.clearRect(0,0,c.width,c.height);
-console.log(event.clientX);
-event.clientX.length = 0;
-event.clientY.length = 0;
-}
-
-function connectDots(event) {
-var c = document.getElementById("draw");
-var ctx = c.getContext("2d");
-var coord = mousePos(c,event);
-if (startPoint) {
-console.log("startPoint");
-startPoint = false;
-ctx.moveTo(coord.x,coord.y);
-} else {
-console.log("Started");
-ctx.lineTo(coord.x,coord.y);
-}
-ctx.arc(coord.x,coord.y,5,0,2*Math.PI);
-ctx.stroke();
-}
-
-</script>
+<script src="canvas.js"></script>
 
 </body>
 </html>
